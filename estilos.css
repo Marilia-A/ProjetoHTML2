@@ -1,0 +1,100 @@
+ body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     height: 100vh;
+     display: flex;
+     /* Define o corpo como Flex Container */
+     flex-direction: column;
+     /* Empilha Header, Main e Footer verticalmente */
+ }
+
+ header,
+ footer {
+     background-color: #333;
+     color: white;
+     text-align: center;
+     padding: 10px 0;
+ }
+
+ header {
+     height: 15vh;
+     /* 15% da altura da tela */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ header h1 {
+     margin-bottom: 5px;
+ }
+
+ footer {
+     height: 10vh;
+     /* 10% da altura da tela */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     font-size: 0.9em;
+ }
+
+ main {
+     height: 75vh;
+     /* Ocupa o restante da altura da tela (100 - 15 - 10 = 75) */
+     display: flex;
+     /* Define o main como Flex Container */
+     flex-direction: row;
+     /* Alinha Menu, Conteúdo e Sidebar horizontalmente */
+ }
+
+ /* Menu (NAV) */
+ nav.area-menu {
+     width: 20%;
+     background-color: #e0f2f1;
+     border-right: 1px solid #ccc;
+     padding: 0;
+ }
+
+ /* Conteúdo Principal (SECTION) */
+ section.area-conteudo-principal {
+     width: 65%;
+     /* 65% do centro */
+     background-color: #ffffff;
+ }
+
+ /* Barra Lateral (ASIDE) */
+ aside.area-sidebar {
+     width: 15%;
+     /* 15% da lateral */
+     background-color: #f5f5f5;
+     border-left: 1px solid #ccc;
+     padding: 10px;
+     box-sizing: border-box;
+     font-size: 0.9em;
+ }
+
+ /* Estilos de Iframe */
+ iframe {
+     width: 100%;
+     height: 100%;
+     border: none;
+ }
+
+ /* Estilos para o menu.html */
+ .menu-principal {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .menu-principal a {
+     text-decoration: none;
+     color: #00796b;
+     display: block;
+     padding: 10px;
+     border-bottom: 1px solid #b2dfdb;
+ }
+
+ .menu-principal a:hover {
+     background-color: #b2dfdb;
+ }
