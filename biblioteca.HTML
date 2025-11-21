@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -110,7 +110,7 @@
       color: #4a90e2;
       margin-bottom: 15px;
       font-size: 1.5em;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);  /* Visual shadow */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);  
     }
     .modal p {
       line-height: 1.5;
@@ -157,6 +157,14 @@
     </figure>
   </div>
 
+  <figure>
+      <a href="#hollow-modal">  
+        <img src="hollow.jpg" alt="Hollow Knight">
+      </a>
+      <figcaption>Hollow Knight</figcaption>
+    </figure>
+  </div>
+
 
   <div id="gris-modal" class="modal">
     <div class="modal-content">
@@ -184,6 +192,294 @@
       <img src="stardew.jpg" alt="Stardew Valley">
       <h3>Stardew Valley</h3>
       <p>Stardew Valley is a relaxing farming sim. Build your farm, befriend villagers, mine, fish, and uncover secrets in a charming pixel-art world. Ideal for chill gaming sessions.</p>
+    </div>
+  </div>
+
+  <div id="hollow-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="hollow.jpg" alt="Hollow Knight">
+      <h3>Hollow Knight</h3>
+      <p> description </p>
+    </div>
+  </div>
+
+</body>
+</html> -->
+
+<!-- AQUI ESTÁ O MODELO ATUALIZADO COM NOVOS MODAIS + AJUSTES PARA REMOVER ESTILOS INLINE -->
+<!-- Inclui: mais modais, organização semanticamente melhorada, preparação para mover estilos ao CSS externo -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteca</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      padding: 20px; 
+      background-color: #f9f9f9;  
+    }
+    h2 { 
+      text-align: center; 
+      color: #4a90e2;  
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);  
+    }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+      padding: 10px;  
+    }
+    figure {
+      margin: 0;
+      text-align: center;
+      background-color: #ffffff;  
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+      transition: transform 0.3s ease;  
+    }
+    figure:hover {
+      transform: scale(1.02);  
+    }
+    img {
+      width: 100%;
+      height: auto;  
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.2s;
+      display: block;  
+    }
+    img:hover { 
+      transform: scale(1.05); 
+    }
+    figcaption {
+      font-size: 0.9em;
+      margin-top: 5px;
+      color: #4a90e2;  
+      font-weight: bold;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);  }
+
+    
+    .modal {
+      display: none;  
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);  
+      animation: fadeIn 0.3s ease;
+    }
+    .modal:target {
+      display: block;  
+    }
+    .modal-content {
+      background-color: #ffffff;
+      margin: 10% auto;  
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;  
+      max-height: 70%;
+      overflow-y: auto;  
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  
+      position: relative;
+      animation: slideIn 0.3s ease;  
+      text-align: center; 
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      text-decoration: none;  
+      z-index: 1001;
+    }
+    .close:hover {
+      color: #4a90e2;  
+    }
+    .modal img {
+      width: 100%;
+      max-width: 200px;  
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 15px;  
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .modal h3 {
+      color: #4a90e2;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);  
+    }
+    .modal p {
+      line-height: 1.5;
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 1em;
+    }
+
+   
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Biblioteca de Jogos</h2>
+
+  <section class="galeria">
+    <figure>
+      <a href="#gris-modal">
+        <img src="gris.jpg" alt="GRIS">
+      </a>
+      <figcaption>GRIS</figcaption>
+    </figure>
+
+    <figure>
+      <a href="#neva-modal">
+        <img src="neva.jpg" alt="NEVA">
+      </a>
+      <figcaption>NEVA</figcaption>
+    </figure>
+
+    <figure>
+      <a href="#stardew-modal">
+        <img src="stardew.jpg" alt="Stardew Valley">
+      </a>
+      <figcaption>STARDEW VALLEY</figcaption>
+    </figure>
+
+    <figure>
+      <a href="#hollow-modal">
+        <img src="hollow.jpg" alt="Hollow Knight">
+      </a>
+      <figcaption>Hollow Knight</figcaption>
+    </figure>
+
+    <!-- NOVOS JOGOS ADICIONADOS -->
+
+    <figure>
+      <a href="#celeste-modal">
+        <img src="celeste.jpg" alt="Celeste">
+      </a>
+      <figcaption>Celeste</figcaption>
+    </figure>
+
+    <figure>
+      <a href="#hades-modal">
+        <img src="hades.jpg" alt="Hades">
+      </a>
+      <figcaption>Hades</figcaption>
+    </figure>
+
+    <figure>
+      <a href="#ori-modal">
+        <img src="ori.jpg" alt="Ori and the Will of the Wisps">
+      </a>
+      <figcaption>Ori and the Will of the Wisps</figcaption>
+    </figure>
+
+    <figure>
+      <a href="#witcher-modal">
+        <img src="witcher3.jpg" alt="The Witcher 3">
+      </a>
+      <figcaption>The Witcher 3</figcaption>
+    </figure>
+
+  </section>
+
+  <!-- MODAIS ORIGINAIS + NOVOS MODAIS -->
+
+  <div id="gris-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="gris.jpg" alt="GRIS">
+      <h3>GRIS</h3>
+      <p>GRIS is an emotional journey through a world made of colors. Explore surreal landscapes and restore vibrancy with beautiful music and art. Perfect for students who love artistic adventures!</p>
+    </div>
+  </div>
+
+  <div id="neva-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="neva.jpg" alt="NEVA">
+      <h3>NEVA</h3>
+      <p>NEVA is an upcoming adventure game where you bond with a wolf cub in a dying world. Focus on exploration, emotion, and stunning hand-drawn visuals. Great for emotional storytelling fans.</p>
+    </div>
+  </div>
+
+  <div id="stardew-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="stardew.jpg" alt="Stardew Valley">
+      <h3>Stardew Valley</h3>
+      <p>Stardew Valley is a relaxing farming sim. Build your farm, befriend villagers, mine, fish, and uncover secrets in a charming pixel-art world. Ideal for chill gaming sessions.</p>
+    </div>
+  </div>
+
+  <div id="hollow-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="hollow.jpg" alt="Hollow Knight">
+      <h3>Hollow Knight</h3>
+      <p>A challenging Metroidvania with a memorable soundtrack, vast world, and skillful combat.</p>
+    </div>
+  </div>
+
+  <!-- NOVOS MODAIS -->
+
+  <div id="celeste-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="celeste.jpg" alt="Celeste">
+      <h3>Celeste</h3>
+      <p>A highly accurate platform with a profound narrative involving personal growth.</p>
+    </div>
+  </div>
+
+  <div id="hades-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="hades.jpg" alt="Hades">
+      <h3>Hades</h3>
+      <p>Award-winning roguelike with fast-paced combat, addictive progression, and charismatic characters.</p>
+    </div>
+  </div>
+
+  <div id="ori-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="ori.jpg" alt="Ori and the Will of the Wisps">
+      <h3>Ori and the Will of the Wisps</h3>
+      <p>A poetic Metroidvania with impeccable animations, a thrilling soundtrack, and fluid gameplay.</p>
+    </div>
+  </div>
+
+  <div id="witcher-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <img src="witcher3.jpg" alt="The Witcher 3">
+      <h3>The Witcher 3</h3>
+      <p>Epic RPG with a rich open world, dense narratives, and impactful choices.</p>
     </div>
   </div>
 
