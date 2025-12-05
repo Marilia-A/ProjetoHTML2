@@ -1,18 +1,17 @@
-// Função paralela: apenas calcula e retorna o IMC (número)
+
 function obterIMC(peso, altura) {
-  // converte vírgula para ponto, se vier como string
   peso = typeof peso === "string" ? peso.replace(",", ".") : peso;
   altura = typeof altura === "string" ? altura.replace(",", ".") : altura;
 
   peso = parseFloat(peso);
   altura = parseFloat(altura);
 
-  if (peso <= 0 || altura <= 0 || isNaN(peso) || isNaN(altura)) {
+  if (peso <= 0 || altura <= 0) {
     return null;
   }
 
   const imc = peso / (altura * altura);
-  return imc; // retorna número puro
+  return imc; 
 }
 
 function calcularIMC() {

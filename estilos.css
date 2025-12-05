@@ -10,7 +10,7 @@
 
  header,
  footer {
-     background-color: #1d53af;
+     background-color: #5f82bf;
      color: white;
      text-align: center;
      padding: 10px 0;
@@ -50,8 +50,8 @@
  /* Menu (NAV) */
  nav.area-menu {
      width: 20%;
-     background-color: #879bda;
-     border-right: 1px solid #879bda;
+     background-color: #b8c2e1;
+     border-right: 1px solid #b8c2e1;
      padding: 0;
  }
 
@@ -59,15 +59,15 @@
  section.area-conteudo-principal {
      width: 65%;
      /* 65% do centro */
-     background-color: #5d79d0;
+     background-color: #ffffff;
  }
 
  /* Barra Lateral (ASIDE) */
  aside.area-sidebar {
      width: 15%;
      /* 15% da lateral */
-     background-color: #879bda;
-     border-left: 1px solid #879bda;
+     background-color: #b8c2e1;
+     border-left: 1px solid #b8c2e1;
      padding: 10px;
      box-sizing: border-box;
      font-size: 0.9em;
@@ -96,7 +96,7 @@
  }
 
  .menu-principal a:hover {
-     background-color: #6a71d5;
+     background-color: #ffffff;
  }
 
  a {
@@ -113,7 +113,7 @@
 a:hover {
     background-color: #4a90e2;
     color: #ffffff;
-    /* transform: translateX(5px); */
+    /* transform: translateX(5px); */  
 }
 
 /* ===== ESTILO PADRÃO DO FORMULÁRIO ===== */
