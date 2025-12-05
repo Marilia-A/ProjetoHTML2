@@ -113,7 +113,7 @@
 a:hover {
     background-color: #4a90e2;
     color: #ffffff;
-    transform: translateX(5px);
+    /* transform: translateX(5px); */  //chatice
 }
 
 /* ===== ESTILO PADRÃO DO FORMULÁRIO ===== */
@@ -121,7 +121,7 @@ form {
     max-width: 500px;
     margin: 20px auto;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     font-family: Arial, sans-serif;
